@@ -1,0 +1,152 @@
+/**
+  problem : 
+
+  author  : Almgwary
+  date    : dd-mm-yy
+  thin    : ddM
+ **/
+
+
+/*make elements right*/
+.pull_right{
+	float: right;
+}
+
+
+/*make box arround element*/
+.box{
+	/* this will break grid system so we rplace wiht box-shadow in next line*/
+    /* border: 1px solid #ddd!important;*/
+    box-shadow: 0 0 2px black;
+    
+}
+
+/*make shadow in left border*/
+.left_box{
+	box-shadow: -5px 0 0px 0px black;
+}
+body {
+	margin: 5%;
+}
+
+
+/*custmize table*/
+table {
+  border-collapse: separate;
+  border-spacing: 0 5px;
+}
+
+thead th {
+  background-color: #006DCC;
+  color: white;
+}
+
+tbody td {
+  background-color: #EEEEEE;
+}
+
+tr td:first-child,
+tr th:first-child {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+
+}
+
+tr td:last-child,
+tr th:last-child {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+
+
+
+
+/*angular*/
+.selected td {
+  background-color: red;
+}
+
+/*D3js*/
+/*.axis {
+	  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+	  fill: none;
+	  stroke: #000;
+	  shape-rendering: crispEdges;
+}*/
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*extra desighn*/
+ 
+h1{
+font-size: 30px;
+}
+.page-header{
+	margin-top: 5px;
+	margin-bottom: 10px;
+	padding-bottom: 9px;
+	border-bottom: 1px solid #ccc;
+}
+.chart-container{
+	position: relative;
+	height:260px;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 10px;
+}
+.page-container{
+	position:relative;
+}
+
+.title-bar{
+	position: relative;
+	float: left;
+	margin-left: 260px;
+	font-size: 20px;
+}
+.title-pie{
+	position: relative;
+	float: right;
+	margin-right: 20px;
+	font-size: 20px;
+}
+
+.title-table{
+	position: relative;
+	text-align: center;
+	
+	font-size: 20px;
+	width: 100%;
+}
+
+#chart-bars-viewsforhours{
+	position: absolute;
+	left:0;
+	margin-top: 15px;
+}
+#chart-pie-viewsfortopplayer{
+	position: absolute;
+	right: 0;
+	margin-top: 35px;
+}

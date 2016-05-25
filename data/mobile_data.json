@@ -1,0 +1,84 @@
+{
+  "colors": [
+    "white",
+    "black",
+    "gold"
+  ],
+  "screens": [
+    "4",
+    "5",
+    "6"
+  ],
+  "features": [
+    "Dual SIM",
+    "NFC",
+    "4G"
+  ],
+  "brands": [
+    "Sony",
+    "Samsung",
+    "Apple",
+    "Nokia",
+    "LG"
+  ],
+  "memory": [
+    "16GB",
+    "32GB",
+    "64GB",
+    "128GB"
+  ],
+  "mobile_list": [
+    {
+      "model": "K0",
+      "manufacture_year": 2012,
+      "brand": "Nokia",
+      "memory": "20G",
+      "features": [
+        "Dual SIM",
+        "NFC",
+        "4G"
+      ],
+      "screen": 2,
+      "colors": "black"
+    },
+    {
+      "model": "JS",
+      "manufacture_year": 2016,
+      "brand": "Samsung",
+      "memory": "20G",
+      "features": [
+        "Dual SIM",
+        "NFC",
+        "4G"
+      ],
+      "screen": 2,
+      "colors": "Red"
+    },
+    {
+      "model": "Oi",
+      "manufacture_year": 2015,
+      "brand": "Sony",
+      "memory": "20G",
+      "features": [
+        "Dual SIM",
+        "NFC",
+        "4G"
+      ],
+      "screen": 2,
+      "colors": "black"
+    },
+    {
+      "model": "Ld",
+      "manufacture_year": 2014,
+      "brand": "Nokia",
+      "memory": "20G",
+      "features": [
+        "Dual SIM",
+        "NFC",
+        "4G"
+      ],
+      "screen": 2,
+      "colors": "black"
+    }
+  ]
+}
