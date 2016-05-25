@@ -12,6 +12,7 @@ function MainModel() {
       ],
       "screens": [
       "4",
+      "7",
       "5",
       "6"
       ],
@@ -38,7 +39,7 @@ function MainModel() {
           "id":"0",
           "model": "K0",
           "manufacture_year": 2012,
-          "brand": "Nokia",
+          "brand": "Apple",
           "memory": "20G",
           "features": [
           "Dual SIM",
@@ -91,9 +92,9 @@ function MainModel() {
       },
       {
           "id":"4",
-          "model": "Ld",
+          "model": "505",
           "manufacture_year": 2014,
-          "brand": "Nokia",
+          "brand": "LG",
           "memory": "20G",
           "features": [
           "Dual SIM",
@@ -107,33 +108,8 @@ function MainModel() {
   }
   ;
 
-  this.today = [];
-
-  var calculateSplit = function(numValue,totViews) {
-    var max = totViews;
-    var result = [];
-    for (var i = 0; i < numValue - 1; i++) {
-        result[i] = Math.floor(Math.random()*(max+1));
-        max -= result[i];
-    }
-    result[numValue - 1] = max;
-    return result;
-};
-
-var dataPoints  = 24;
-var step        = 3600000;
-var now         = new Date();
-var msecs       = now.getTime();
-var DailyCount = 0;
-var item, index;
-
-for (index in this.countries) {
-    item = this.countries[index];
-    item.views = Math.floor(Math.random()*9001);
-    DailyCount += item.views;
-};
- 
-
+   
+   
  
 
 }

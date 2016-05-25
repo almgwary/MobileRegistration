@@ -1,12 +1,6 @@
  <div class="row">
         
-        <!-- <div>{{data}}</div> -->
-        <!-- <div>{{colors_list}}</div>
-        <div>{{screens_list}}</div>
-        <div>{{features_list}}</div>
-        <div>{{brands_list}}</div>
-        <div>{{memory_list}}</div>
-        <div>{{mobile_list}}</div> -->
+        
         <!-- Start Right part -->
         <div class="col-md-8">
             
@@ -18,7 +12,7 @@
 
                 <div class="col-md-4">
                     
-                    <button class="btn btn-primary center-block" type="submit">Add New Mobile</button>
+                    <button class="btn btn-primary center-block" type="submit" ng-click="add()">Add New Mobile</button>
                 </div>  
             </div>
             <!-- End First part -->
@@ -32,7 +26,7 @@
                         <div class="form-group row">
                           <label for="inputManufactore" class="col-sm-2 control-label">Model</label>
                           <div class="col-sm-6">
-                            <input type="number"    class="form-control" id="inputManufactore" placeholder="2015">
+                            <input type="text"    class="form-control" id="inputManufactore" ng-model="selectedmodel" placeholder="Samsung S6">
                           </div>
                         </div>
 
@@ -48,7 +42,7 @@
 
                 <div class="col-md-4">
                     
-                    <button class="btn btn-primary " type="submit">search</button>
+                    <button class="btn btn-primary " type="submit" ng-click="search()" >search</button>
                 </div>  
             </div>
             <!-- End Second Part -->
@@ -56,18 +50,18 @@
             <!-- Start 3rd Part -->
             <div class="container-fluid">
                   <h2>Condensed Table</h2>
-                  <p>The .table-condensed class makes a table more compact by cutting cell padding in half:</p>            
+                           
                   <table class="table table-condensed">
                     <thead>
                       <tr>
-                        <th>Brand</th>
-                        <th>Model</th>
-                        <th>Year</th>
+                        <th ng-click="orderByMe('brand')">  Brand</th>
+                        <th ng-click="orderByMe('model')">  Model</th>
+                        <th ng-click="orderByMe('manufacture_year')">  Year</th>
                       </tr>
                     </thead>
                     <tbody>
                         
-                <tr ng-repeat="mobile_item in mobile_list" ng-click="setSelected(mobile_item)" ng-class="{selected: mobile_item.id === selected_mobile_item.id }" >
+                <tr ng-repeat="mobile_item in mobile_list | filter:myFilter |  orderBy:myOrderBy" ng-click="setSelected(mobile_item)" ng-class="{selected: mobile_item.id === selected_mobile_item.id }" >
                          
                         <td>{{mobile_item.brand}}</td>
                         <td>{{mobile_item.model}}</td>

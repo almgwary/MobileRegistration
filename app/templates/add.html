@@ -1,0 +1,126 @@
+ <!-- Start Header -->
+    <div class="col-md-12"  >
+          <h2 class="pull_right">Add Mobile {{name}}</h2>
+    </div>
+    <!-- End Header -->
+
+
+    <!-- Start Content -->
+    <div class="row">
+
+        <!-- Start LeftInput Part -->
+        <div class="col-md-5">
+            
+
+            <form class="form-horizontal">
+                
+                 
+
+                <div class="form-group">
+                  <label for="inputModel" class="col-sm-2 control-label">Model</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="inputModel" placeholder="Samsung S6" ng-model="me.model">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="inputManufactore" class="col-sm-2 control-label">Manufactore Year</label>
+                  <div class="col-sm-6">
+                    <input type="number"    class="form-control" id="inputManufactore"  ng-model="me.manufacture_year"placeholder="2015">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="inputBrand" class="col-sm-2 control-label">Brand </label>
+                  <div class="col-sm-6">
+                    
+                    <select class="form-control"   id="inputBrand" ng-model="me.brand" ng-options="brand for brand in data.brands"> </select>
+                     
+                  </div>
+                </div>
+
+
+
+                <div class="form-group">
+                  <label for="inputMemory" class="col-sm-2 control-label">Memory</label>
+                  <div class="col-sm-6">
+                     <select class="  form-control"   id="inputMemory" ng-model="me.memory" ng-options="item for item in data.memory"> </select>
+                     
+                  </div>
+                </div>
+ 
+
+
+            </form>
+ 
+        </div>
+        <!-- End LeftInput Part  -->
+        {{me}}
+        <!-- Start RightInput Part -->
+        <div class="col-md-7">
+          <div class="row box">
+           
+            <!-- Start 1st checkbox items -->
+            <div  class="col-md-3">
+                <div ng-repeat="feature in data.features">
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox1" ng-model="me.features" value="{{feature}}"> {{feature}} :
+                  </label>
+                </div>  
+                
+                
+            </div>
+            <!-- End 1st checkbox items -->      
+              
+
+            <!-- Start  Screen items --> 
+            <div  class="col-md-1">
+               <label>Screen</label>
+            </div>
+            <div  class="col-md-3" >
+                <div ng-repeat="screen in data.screens">
+                  <label class="radio-inline">
+                    <input type="radio" id="inlineradio1" ng-model="me.screen" value="{{screen}}"> {{screen}}"
+                  </label>
+                </div>  
+                
+                 
+            </div>
+            <!-- End  Screen items --> 
+
+
+             <!-- Start  radio items --> 
+             
+            <div  class="col-md-1">
+               <label>Color</label>
+            </div>
+           
+            <div  class="col-md-3">
+
+                <div ng-repeat="color in data.colors">
+                  <label class="radio-inline">
+                    <input type="radio" id="inlineradio1" ng-model="me.color"value="{{color}}"> {{color}}"
+                  </label>
+                </div>  
+                 
+            </div>
+            <!-- End  color items --> 
+
+
+          </div>
+        </div>
+        <!-- End RightInput Part -->
+    </div>
+     <!-- End Content -->
+
+
+
+ 
+     <!-- Start Buttuns -->
+     <div class="row"  >
+        <div class="col-md-1 pull_right"> <button type="button" class="btn btn-primary" ng-click="save()">Save</button></div>
+        <div class="col-md-1 pull_right"> <button type="button" class="btn btn-default" ng-click="back()">Back</button></div>
+        
+
+     </div>
+     <!-- End Buttuns -->

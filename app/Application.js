@@ -12,6 +12,12 @@ app.factory('mainModel', function() {
     return new MainModel();
 });
 
+app.factory('addModel', [function () {
+	
+
+	return new AddModel();
+}])
+
 
 
 
@@ -25,8 +31,8 @@ app.config(function($routeProvider) {
                 templateUrl: 'app/templates/main.html'
             })
             .when('/add', {
-                controller: 'ReportingController',
-                templateUrl: 'app/templates/reporting.html'
+                controller: 'AddController',
+                templateUrl: 'app/templates/add.html'
             })
             .otherwise({redirectTo: '/main'});
 });
