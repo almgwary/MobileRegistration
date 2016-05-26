@@ -4,32 +4,14 @@
 // auto sorting
 
 
-app.controller('MainController', function($scope ,mainModel,$location) {
+app.controller('MainController', function($scope ,mainModel,$location ,MyStorage) {
 
     
       
 
 
-    //load data from localStorage or app json
-    $scope.data =  new function (){
-
-      if (typeof localStorage["data"] !== "undefined") {
-        $scope.data  = JSON.parse(localStorage["data"]);
-        console.log("Founded Data");
-        return $scope.data  ;
-        
-      }else {
-          //load from app json
-           $scope.data = mainModel.data; 
-           console.log("Not Founded Data ReInit" );
-           //Save to storage
-           $scope.save  = angular.toJson($scope.data );
-           
-           localStorage.setItem('data',$scope.save );
-           return $scope.data  ;
-      }
-        
-    }
+    // load data form app service 
+    $scope.data =  MyStorage.loudDataFromLocalStorage();
      
 
     // All data
@@ -87,6 +69,11 @@ app.controller('MainController', function($scope ,mainModel,$location) {
     $scope.add = function (){
       console.log("Nivgating to addPage");
       $location.path('/add');
+    }
+
+    //clear local storage clearLocalStorage
+    $scope.clear = function  () {
+      MyStorage.clearLocalStorage();
     }
 
 });
