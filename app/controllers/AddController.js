@@ -3,18 +3,18 @@
  
 
 
-app.controller('AddController', function($scope ,addModel,mainModel,MyStorage,$location) {
+app.controller('AddController', function($scope ,addModel,mainModel,MyStorage,$location ,$rootScope) {
 
     
       
       //load data from localStorage or app json
-     $scope.data =  MyStorage.loudDataFromLocalStorage();
+      $scope.data = $rootScope.data    ; 
 
 
      
     
         $scope.me = {};
-        $scope.me.id = $scope.data.mobile_list.length;
+        $scope.me.id = $rootScope.data .mobile_list.length;
         $scope.me.model; 
         $scope.me.manufacture_year; 
         $scope.me.brand; 
@@ -26,8 +26,8 @@ app.controller('AddController', function($scope ,addModel,mainModel,MyStorage,$l
 
      $scope.save =   function ()  {
       console.log("Saving and going to Main" );
-      $scope.data.mobile_list.push($scope.me) ;
-      MyStorage.saveData( angular.toJson($scope.data ));
+      $rootScope.data .mobile_list.push($scope.me) ;
+      MyStorage.saveData( angular.toJson($rootScope.data  ));
       $location.path('/main');
 
      } ;

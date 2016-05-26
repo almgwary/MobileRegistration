@@ -1,8 +1,14 @@
 
 
-var app = angular.module("MobileApplication", ['ui.bootstrap','app.directives']);
- 
+var app = angular.module("MobileApplication", ['ui.bootstrap','app.directives' ]);
 
+//root scop to load all data
+app.run(function($rootScope ,MyStorage ) {
+    
+     //load data from localStorage or app json
+     $rootScope.data=  MyStorage.loudDataFromLocalStorage();
+});
+ 
 // create new opject each time
 app.factory('mainModel', function() {
     return new MainModel();
@@ -74,6 +80,7 @@ app.service('MyStorage', function () {
             console.log("Data Saved To Local Storage");
              
          }
+         //
     
     
 })

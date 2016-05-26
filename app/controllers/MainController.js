@@ -4,23 +4,20 @@
 // auto sorting
 
 
-app.controller('MainController', function($scope ,mainModel,$location ,MyStorage) {
+app.controller('MainController', function($scope ,mainModel,$location ,MyStorage , $rootScope) {
 
     
       
 
-
-    // load data form app service 
-    $scope.data =  MyStorage.loudDataFromLocalStorage();
-     
+ 
 
     // All data
-    $scope.colors_list =  $scope.data.colors ;
-    $scope.screens_list =  $scope.data.screens ;
-    $scope.features_list =  $scope.data.features ;
-    $scope.brands_list =  $scope.data.brands ;
-    $scope.memory_list =  $scope.data.memory ;
-    $scope.mobile_list =  $scope.data.mobile_list ;
+    $scope.colors_list =  $rootScope.data.colors ;
+    $scope.screens_list =  $rootScope.data.screens ;
+    $scope.features_list =  $rootScope.data.features ;
+    $scope.brands_list =  $rootScope.data.brands ;
+    $scope.memory_list =  $rootScope.data.memory ;
+    $scope.mobile_list =  $rootScope.data.mobile_list ;
      
 
     // search inputs
