@@ -9,7 +9,7 @@ app.controller('MainController', function($scope ,mainModel,$location ,MyStorage
     
 
     $scope.visulData = getVisulizedData.geData($rootScope);
-    console.log("vs " +JSON.stringify( $scope.visulData)) ;
+    // console.log("vs " +JSON.stringify( $scope.visulData)) ;
  
 
  

@@ -1,8 +1,11 @@
  <!-- Start Header -->
     <div class="col-md-12"  >
-          <h2 class="pull_right">Add Mobile {{name}}</h2>
+          <h2 class="pull_right">Add Mobile   <span class="label label-warning ">ID: {{me.id}}</span></h2> 
+
     </div>
     <!-- End Header -->
+
+
 
 
     <!-- Start Content -->
@@ -55,7 +58,7 @@
  
         </div>
         <!-- End LeftInput Part  -->
-        {{me}}
+        
         <!-- Start RightInput Part -->
         <div class="col-md-7">
           <div class="row box">
@@ -118,8 +121,8 @@
  
      <!-- Start Buttuns -->
      <div class="row"  >
-        <div class="col-md-1 pull_right"> <button type="button" class="btn btn-primary" ng-click="save()">Save</button></div>
-        <div class="col-md-1 pull_right"> <button type="button" class="btn btn-default" ng-click="back()">Back</button></div>
+        <div class="col-md-1 pull_right"> <button type="button" class="btn btn-primary" ng-click="save()">Save <i class="fa fa-check" aria-hidden="true"></i> </button></div>
+        <div class="col-md-1 pull_right"> <button type="button" class="btn btn-default" ng-click="back()">Back <i class="fa fa-sign-out" aria-hidden="true"></i></button></div>
         
 
      </div>

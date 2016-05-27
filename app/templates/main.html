@@ -4,19 +4,26 @@
         <!-- Start Right part -->
         <div class="col-md-8">
             
-            <!-- Start First part -->
-            <div class="row">
-                <div class="col-md-7"> 
+              <div class="col-md-6"> 
                     <h2 class="center-block"> Mobile Shop Apllication</h2>
-                </div>
+              </div>
 
-                <div class="col-md-3">
+
+
+            <!-- Start First part -->
+            <div class="row" >
+                
+                <div class="col-md-2">
                     
-                    <button class="btn btn-primary center-block" type="submit" ng-click="add()">Add New Mobile</button>
+                    <button class="btn btn-primary center-block " type="submit" ng-click="add()">Add Mobile <i class="fa fa-plus" aria-hidden="true"></i></button>
                 </div>  
                 <div class="col-md-2">
                      
-                    <button class="btn btn-primary center-block" type="submit" ng-click="clear()">clearData</button>
+                    <button class="btn btn-primary center-block" type="submit" ng-click="clear()">reset data <i class="fa fa-cloud-download" aria-hidden="true"></i></button>
+                </div>  
+                <div class="col-md-2">
+                    
+                    <button class="btn btn-primary  center-block" type="submit" ng-click="search()" >search <i class="fa fa-search" aria-hidden="true"></i></button>
                 </div>  
             </div>
             <!-- End First part -->
@@ -44,10 +51,7 @@
 
                 </div>
 
-                <div class="col-md-4">
-                    
-                    <button class="btn btn-primary " type="submit" ng-click="search()" >search</button>
-                </div>  
+                
             </div>
             <!-- End Second Part -->
 
@@ -58,9 +62,9 @@
                   <table class="table table-condensed">
                     <thead>
                       <tr>
-                        <th ng-click="orderByMe('brand')">  Brand</th>
-                        <th ng-click="orderByMe('model')">  Model</th>
-                        <th ng-click="orderByMe('manufacture_year')">  Year</th>
+                        <th ng-click="orderByMe('brand')">  Brand <i class="fa fa-fw fa-sort"></i></th>
+                        <th ng-click="orderByMe('model')">  Model <i class="fa fa-fw fa-sort"></i></th>
+                        <th ng-click="orderByMe('manufacture_year')">  Year <i class="fa fa-fw fa-sort"></i></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -141,7 +145,7 @@
 
              <div class = "chart-container">
                 <bi-chart chart-data="visulData.mobileCount_vs_brand"> 
-                    <div class="title-pie">Views for Top Players</div>
+                    <div class="title-pie">count for brand</div>
                     <div id="chart-pie-viewsfortopplayer"></div>
                 </bi-chart>
             </div> 

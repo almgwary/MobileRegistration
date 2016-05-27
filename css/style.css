@@ -21,6 +21,11 @@
     
 }
 
+
+.margin-top {
+	margin-top: 10px ;
+}
+
 /*make shadow in left border*/
 .left_box{
 	box-shadow: -5px 0 0px 0px black;
@@ -98,6 +103,22 @@ tr th:last-child {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*extra desighn*/
  
 h1{
@@ -122,14 +143,16 @@ font-size: 30px;
 .title-bar{
 	position: relative;
 	float: left;
-	margin-left: 260px;
+	 
 	font-size: 20px;
+	margin-top: 50px;
 }
 .title-pie{
 	position: relative;
-	float: right;
+	 
 	margin-right: 20px;
 	font-size: 20px;
+	margin-top: 50px;
 }
 
 .title-table{
@@ -138,13 +161,14 @@ font-size: 30px;
 	
 	font-size: 20px;
 	width: 100%;
+	margin-top: 50px;
 }
 
 #chart-bars-viewsforhours{
 	/*position: absolute;*/
-	left:0;
+	right:0;
 	margin-top: 15px;
-	
+
 }
 #chart-pie-viewsfortopplayer{
 	/*position: absolute;*/
