@@ -131,15 +131,20 @@
 
         <!-- Start Left part -->
         <div class="col-md-4 left_box">
-            <div>dd</div>
-            <div>
-                 
-                  <div style="width: 40px;">4</div>
-                 
+             
+            <div class = "chart-container">
+                <bars-chart chart-data="visulData.mobileCount_vs_year">
+                    <div class="title-bar">Count Vs Year</div>
+                    <div id="chart-bars-viewsforhours "></div> 
+                </bars-chart>
+            </div> 
 
-            </div>
-            <div>dd</div>
-            <div>dd</div>
+             <div class = "chart-container">
+                <bi-chart chart-data="visulData.mobileCount_vs_brand"> 
+                    <div class="title-pie">Views for Top Players</div>
+                    <div id="chart-pie-viewsfortopplayer"></div>
+                </bi-chart>
+            </div> 
         </div>
         <!-- End Left part -->
 

@@ -4,10 +4,13 @@
 // auto sorting
 
 
-app.controller('MainController', function($scope ,mainModel,$location ,MyStorage , $rootScope) {
+app.controller('MainController', function($scope ,mainModel,$location ,MyStorage , $rootScope,getVisulizedData) {
 
     
-      
+
+    $scope.visulData = getVisulizedData.geData($rootScope);
+    console.log("vs " +JSON.stringify( $scope.visulData)) ;
+ 
 
  
 
@@ -19,7 +22,7 @@ app.controller('MainController', function($scope ,mainModel,$location ,MyStorage
     $scope.memory_list =  $rootScope.data.memory ;
     $scope.mobile_list =  $rootScope.data.mobile_list ;
      
-
+    
     // search inputs
      $scope.selectedmodel ;
      $scope.selectedBrand ;
@@ -71,6 +74,7 @@ app.controller('MainController', function($scope ,mainModel,$location ,MyStorage
     //clear local storage clearLocalStorage
     $scope.clear = function  () {
       MyStorage.clearLocalStorage();
+
     }
 
 });

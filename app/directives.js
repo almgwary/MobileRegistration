@@ -1,7 +1,7 @@
 angular.module('app.directives', []).
- directive('barsChart', function ($parse) {
-     
-     var directiveDefinitionObject = {
+directive('barsChart', function ($parse) {
+
+ var directiveDefinitionObject = {
          //We restrict its use to an element
          restrict: 'E',
          //we don't want to overwrite our directive declaration in the HTML mark-up
@@ -10,42 +10,105 @@ angular.module('app.directives', []).
          scope: {data: '=chartData'},
          link: function (scope, element, attrs) {
 
-          var ChartBarsViewsForHours  =  dc.barChart(element[0].childNodes.item(3));
-          var ChartPieViewsForTopPlayer   = dc.pieChart(element[0].childNodes.item(7));
+          var ChartBarsYearVsCount  =  dc.barChart(element[0].childNodes.item(3));
+          
 
           var ndx = crossfilter(scope.data); 
           
-          var dateDim = ndx.dimension(function(d) {return d.dateTime;});
-          var hourViews = dateDim.group().reduceSum(function(d) {return d.views;});         
 
-          ChartBarsViewsForHours.width(620)
-              .height(250)
-              .margins({top: 30, right: 50, bottom: 30, left: 60})
-              .dimension(dateDim)
-              .group(hourViews)
-              .elasticY(true)
-              .centerBar(true)
-              .gap(1)
-              .round(dc.round.floor)
-              .alwaysUseRounding(true)
-              .x(d3.scale.linear().domain([-1, 23]))
-              .yAxisLabel("Views for Hours")
-              .xAxisLabel("Hours")
-              .renderHorizontalGridLines(true);
-            
-              ChartBarsViewsForHours.yAxis().ticks(10);  
 
-              var topPlayerDim  = ndx.dimension(function(d) {return d.topPlayer;});
-              var topPlayerViews = topPlayerDim.group().reduceSum(function(d) {return d.views;});
 
-              ChartPieViewsForTopPlayer
-                  .width(250).height(200)
-                  .dimension(topPlayerDim)
-                  .group(topPlayerViews)
-                  .innerRadius(50);            
 
-              dc.renderAll();
-         } 
+
+          var minYear= 5000000 , maxYear = 1  , count = 0 ; 
+          // barchart input 
+          var yearDim = ndx.dimension(function(d) {
+
+
+            var y  =Number(d.year); 
+            if(y > maxYear) maxYear = y ; 
+            if (y < minYear) minYear = y ;
+            count ++ ;
+
+            return  y ; });
+          var count = yearDim.group().reduceSum(function(d) {return d.count;}); 
+
+
+
+
+
+              // console.log("vs???????????????????? " +JSON.stringify( scope.data)+
+              // "\nvs???????????????????? " +JSON.stringify( element)
+              // +"\nvs???????????????????? " +JSON.stringify( attrs)) ;
+
+
+          ChartBarsYearVsCount
+          .width(620)
+          .height(250)
+          
+          .dimension(yearDim)
+          .group(count)
+          .elasticY(true)
+          .centerBar(true)
+          .gap(1)
+
+          .round(dc.round.floor)
+          .alwaysUseRounding(true)
+
+          .x(d3.scale.linear() 
+            .domain([minYear -2, maxYear +2]))
+
+          .yAxisLabel("Count")
+          .xAxisLabel("Year")
+
+
+          .renderHorizontalGridLines(true)
+      
+
+
+          .xAxis().ticks(10)
+
+
+
+          dc.renderAll();
+} 
+};
+return directiveDefinitionObject;
+})
+
+
+.
+directive('biChart', function ($parse) {
+
+ var directiveDefinitionObject = {
+         //We restrict its use to an element
+         restrict: 'E',
+         //we don't want to overwrite our directive declaration in the HTML mark-up
+         replace: false,
+         //our data source would be an array passed thru chart-data attribute
+         scope: {data: '=chartData'},
+         link: function (scope, element, attrs) {
+
+
+
+          var ndx = crossfilter(scope.data);
+          var ChartPieBrandVsCount   = dc.pieChart(element[0].childNodes.item(3));
+
+          var brand  = ndx.dimension(function(d) {return d.brand;});
+          var count = brand.group().reduceSum(function(d) {return d.count;});
+
+           ChartPieBrandVsCount
+          .width(250).height(200)
+          .dimension(brand)
+          .group(count)
+          .innerRadius(50);
+
+          dc.renderAll();
+        } 
       };
       return directiveDefinitionObject;
-   });
+    });;
+
+
+
+

@@ -85,7 +85,45 @@ app.service('MyStorage', function () {
     
 })
 
- 
+
+// this service prepair data for visualization 
+app.service('getVisulizedData', [function ($rootScope) {
+ this.geData = function ($rootScope) {
+
+    //prepare json for collecting data
+    var data = {'mobileCount_vs_brand' : {} , 'mobileCount_vs_year':{}};
+    for (var i = 0 ; i< $rootScope.data.mobile_list.length ; i++) {
+            var year = $rootScope.data.mobile_list[i].manufacture_year ;
+            var brand = $rootScope.data.mobile_list[i].brand ;
+
+            // alert(year);
+            // var count =
+            if(data['mobileCount_vs_year'][year] === undefined ){
+              data['mobileCount_vs_year'][year] = 1 ;
+            }else {
+              data['mobileCount_vs_year'][year]++ ;
+            }
+            // alert(data[year]);
+            if(data['mobileCount_vs_brand'][brand] === undefined ){
+              data['mobileCount_vs_brand'][brand] = 1 ;
+            }else {
+              data['mobileCount_vs_brand'][brand]++ ;
+            }
+            // alert(data[year]);
+
+
+    };
+   // make custome json to be visulized
+   var newData = {'mobileCount_vs_brand' : [] , 'mobileCount_vs_year':[]};
+   for (var brand in data['mobileCount_vs_brand']) {
+      newData['mobileCount_vs_brand'].push({ 'brand' : brand , 'count' :  data['mobileCount_vs_brand'][brand] } );
+   };
+   for (var year in data['mobileCount_vs_year']) {
+      newData['mobileCount_vs_year'].push({ 'year' : year , 'count' :  data['mobileCount_vs_year'][year] } );
+   };
+    return newData ;
+  } 
+}])
 
 
 
