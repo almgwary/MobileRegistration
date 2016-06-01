@@ -1,4 +1,9 @@
-
+/**
+ * Problem : MainModel
+ * Author  : Almgwary
+ * Date    : dd-mm-yy
+ * Thin    : ddM
+ **/
 
 
 function MainModel() {

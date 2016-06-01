@@ -10,6 +10,14 @@
 
 
 
+             <div class="col-md-2">
+                    
+                    <button class="btn btn-primary center-block " type="submit" ng-click="test()">test <i class="fa fa-plus" aria-hidden="true"></i></button>
+                </div> 
+
+
+
+
             <!-- Start First part -->
             <div class="row" >
                 
@@ -68,8 +76,10 @@
                       </tr>
                     </thead>
                     <tbody>
-                        
-                <tr ng-repeat="mobile_item in mobile_list | filter:myFilter |  orderBy:myOrderBy" ng-click="setSelected(mobile_item)" ng-class="{selected: mobile_item.id === selected_mobile_item.id }" >
+                        <!-- filter removed and it's done by controller -->
+                <tr ng-repeat="mobile_item in mobile_list  |  orderBy:myOrderBy"    
+                    ng-click="setSelected(mobile_item)" 
+                    ng-class="{selected: mobile_item.id === selected_mobile_item.id }" >
                          
                         <td>{{mobile_item.brand}}</td>
                         <td>{{mobile_item.model}}</td>
@@ -137,19 +147,22 @@
         <div class="col-md-4 left_box">
              
             <div class = "chart-container">
-                <bars-chart chart-data="visulData.mobileCount_vs_year">
+                <bars-chart chart-data="visulData.mobileCount_vs_year  ">
                     <div class="title-bar">Count Vs Year</div>
                     <div id="chart-bars-viewsforhours "></div> 
                 </bars-chart>
             </div> 
 
              <div class = "chart-container">
-                <bi-chart chart-data="visulData.mobileCount_vs_brand"> 
+                <bi-chart chart-data=" visulData.mobileCount_vs_brand   "> 
                     <div class="title-pie">count for brand</div>
                     <div id="chart-pie-viewsfortopplayer"></div>
                 </bi-chart>
             </div> 
         </div>
         <!-- End Left part -->
+        
 
+
+          
     </div>
